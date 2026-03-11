@@ -16,7 +16,7 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 
 VALIDATE() {
-    if [$1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo -e "$2 ... $R failed $N"
         exit 1
@@ -28,7 +28,7 @@ VALIDATE() {
 }
 
 CHECK_ROOT() {
-    if [$USERID -ne 0]
+    if [ $USERID -ne 0 ]
     then
         echo "$R ERROR:: you must have sudo access to execute this script $N"
         exit 1

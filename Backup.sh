@@ -22,7 +22,7 @@ USAGE() {
 
 }
 
-if [$# -le 2]
+if [ $# -le 2 ]
 then 
     USAGE
 fi

@@ -33,7 +33,7 @@ then
     exit 1
 fi
 
-if [ ! -d "DEST_DIR" ]
+if [ ! -d "$DEST_DIR" ]
 then
     echo -e "$DEST_DIR Does not exits"
     exit 1

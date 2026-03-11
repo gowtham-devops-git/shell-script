@@ -35,13 +35,13 @@ CHECK_ROOT() {
     fi
 }
 
-echo "script started executing at $TIMESTAMP" &>>$LOG_FILE_NMAE
+echo "script started executing at $TIMESTAMP" &>>$LOG_FILE_NAME
 
-FILE_TO_DLT=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES_TO_DLT=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 echo "files to be deletd: $FILES_TO_DLT"
 
-while read -r line filepath
+while read -r  filepath
 do 
   echo "deleting file: $filepath" &>>$LOG_FILE_NAME
   rm -rf $filepath

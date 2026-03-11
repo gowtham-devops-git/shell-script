@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USAGE=$(dh -hT | grep xfs)
+USAGE=$(df -hT | grep xfs)
 DISK_THRESHOLD=3
 
 MSG=""

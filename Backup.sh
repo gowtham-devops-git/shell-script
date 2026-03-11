@@ -8,13 +8,13 @@ N="\e[0m"
 SOURCE_DIR=$1
 DEST_DIR=$2
 
-DAYS=${3: -14}
+DAYS=${3:-14}
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOGFILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%s)
 
-LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+LOG_FILE_NAME="$LOGS_FOLDER/$LOGFILE-$TIMESTAMP.log"
 
 USAGE() {
     echo -e "$R USAGE $N backup <SOURCE_DIR> <DEST_DIR> <DAYS(OPTIONAL)>"
@@ -40,7 +40,7 @@ then
 
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 
 

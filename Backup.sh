@@ -48,7 +48,7 @@ if [ -n "$FILES" ]
 then 
     echo "files are : $FILES"
     ZIP_FILE="$DEST_DIR/APP-LOGS-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip @ $ZIP_FILE
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip "$ZIP_FILE" -@
     if [ -f "$ZIP_FILE" ]
     then
         echo -e "successsfully created the zip file"

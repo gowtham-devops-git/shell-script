@@ -3,7 +3,7 @@
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-N="\N[0m"
+N="\e[0m"
 
 SOURCE_DIR=$1
 DEST_DIR=$2

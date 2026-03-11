@@ -2,7 +2,7 @@
 
 NUMBER=$1
 
--gt, -le, -eq, -ge, -le
+# -gt, -le, -eq, -ge, -le
 
 if [$NUMBER -gt 100]
 then

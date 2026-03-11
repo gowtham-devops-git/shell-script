@@ -10,7 +10,7 @@ DEST_DIR=$2
 
 DAYS=${3: -14}
 
-OGS_FOLDER="/var/log/shellscript-logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 LOGFILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%s)
 
@@ -27,13 +27,13 @@ then
     USAGE
 fi
 
-if [! -d "$SOURCE_DIR"]
+if [ ! -d "$SOURCE_DIR" ]
 then
     echo -e "$SORCE_DIR Does not exists"
     exit 1
 fi
 
-if [! -d "DEST_DIR"]
+if [ ! -d "DEST_DIR" ]
 then
     echo -e "$DEST_DIR Does not exits"
     exit 1
@@ -44,12 +44,12 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 
 
-if [-n "$FILES"]
+if [ -n "$FILES" ]
 then 
     echo "files are : $FILES"
     ZIP_FILE="$DEST_dIR/APP-LOGS-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip @ $ZIP_FILE
-    if [-f "$ZIP_FILE"]
+    if [ -f "$ZIP_FILE" ]
     then
         echo -e "successsfully created the zip file"
         while read -r filepath
